@@ -1,0 +1,106 @@
+@import url('assets/css/all.min.css');
+
+@font-face {
+    font-family: Parastoo;
+    src: url('assets/fonts/Parastoo-FD.eot');
+    src: url('assets/fonts/Parastoo-FD.eot?#iefix') format('embedded-opentype'),
+         url('assets/fonts/Parastoo-FD.woff2') format('woff2'),
+         url('assets/fonts/Parastoo-FD.woff') format('woff'),
+         url('assets/fonts/Parastoo-FD.ttf') format('truetype');
+    font-weight: normal;
+  }
+  
+  @font-face {
+    font-family: Parastoo;
+    src: url('assets/fonts/Parastoo-Bold-FD.eot');
+    src: url('assets/fonts/Parastoo-Bold-FD.eot?#iefix') format('embedded-opentype'),
+         url('assets/fonts/Parastoo-Bold-FD.woff2') format('woff2'),
+         url('assets/fonts/Parastoo-Bold-FD.woff') format('woff'),
+         url('assets/fonts/Parastoo-Bold-FD.ttf') format('truetype');
+    font-weight: bold;
+  }
+
+*{
+    box-sizing: border-box;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing:antialiased;
+}
+
+body{
+    margin:0;
+    padding:0;
+    direction:rtl;
+    font-family: Parastoo;
+}
+
+h1{
+    text-align:center;
+    margin:4rem 0;
+    margin-bottom:2rem;
+}
+
+#editor{
+    direction:ltr;
+}
+
+.ql-editor{
+    direction:rtl;
+    text-align:right !important;
+    min-height:300px;
+    font-family: Parastoo;
+}
+
+.App{
+    max-width:90%;
+    margin:auto;
+}
+
+.mic{
+    width:9rem;
+    height:9rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#f1f1f1;
+    margin:auto;
+    font-size:3rem;
+    margin-bottom:2rem;
+    border:10px solid #f9f9f9;
+    position:relative;
+    cursor: pointer;
+
+    &.active{
+        background:#db4646;
+        color:#FFF;
+        border:none;
+
+        &::before{
+            width:10rem;
+            height:10rem;
+            position:absolute;
+            top:-50%;
+            left:-50%;
+            right:-50%;
+            bottom:-50%;
+            margin:auto;
+            z-index:-1;
+            content:'';
+            display:block;
+            border-radius:50%;
+            background:#f8abab;
+            animation:1s listening;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+        }
+    }
+}
+
+@keyframes listening{
+    0%{
+        transform:scale(.9);
+    }
+    100%{
+        transform:scale(1.1);
+    }
+}
