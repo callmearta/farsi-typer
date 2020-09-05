@@ -35,15 +35,25 @@ function Speech(props) {
         const last = event.results.length - 1;
         const res = event.results[last];
         const newText = res[0].transcript;
+
         if (res.isFinal) {
-            setLocalText(newText);
+            if (newText.includes('پاک کن پاک کن')) {
+                setLocalText(null);
+            } else {
+                setLocalText(newText.replace('ویرگول ویرگول', '،').replace('برو خط بعد', '\n').replace('نقطه نقطه', '.'));
+            }
         } else {
             setPreview(newText);
         }
     };
 
     useEffect(() => {
-        setText(text + ' ' + localText);
+        if (localText == null) {
+            setText('');
+            setLocalText('');
+        } else {
+            setText(text + ' ' + localText);
+        }
     }, [localText]);
 
     return (

@@ -24,6 +24,7 @@
     box-sizing: border-box;
     text-rendering: optimizeSpeed;
     -webkit-font-smoothing:antialiased;
+    outline:none !important;
 }
 
 body{
@@ -31,16 +32,25 @@ body{
     padding:0;
     direction:rtl;
     font-family: Parastoo;
+    background:#f8f8f8;
 }
 
 h1{
     text-align:center;
     margin:4rem 0;
+    margin-bottom:0;
+}
+
+h2{
+    text-align:center;
     margin-bottom:2rem;
+    font-weight:300;
+    font-size:1rem;
 }
 
 #editor{
     direction:ltr;
+    background:#FFF;
 }
 
 .ql-editor{
@@ -102,5 +112,113 @@ h1{
     }
     100%{
         transform:scale(1.1);
+    }
+}
+
+.d-flex{
+    display:flex !important;
+}
+
+.align-items-center{
+    align-items:center !important;
+}
+
+.justify-content-end{
+    justify-content:flex-end !important;
+}
+
+.justify-content-center{
+    justify-content:center !important;
+}
+
+.justify-content-start{
+    justify-content:flex-start !important;
+}
+
+.align-items-start{
+    align-items:flex-start !important;
+}
+
+.align-items-end{
+    align-items:flex-end !important;
+}
+
+button.btn-dark{
+    background:#2d2d2d;
+    color:#FFF;
+    border:none;
+    padding:8px 25px;
+    border-radius: 5px;
+    margin:1rem 0;
+    font-family: Parastoo;
+    cursor: pointer;
+}
+
+.Toastify__toast{
+    font-family: Parastoo !important;
+    direction: rtl !important;
+    padding:5px 20px !important;
+    font-size:.9rem;
+    min-height:50px !important;
+}
+
+.Toastify__toast--success{
+    background:#2d2d2d !important;
+}
+
+.Toastify__close-button{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.font-weight-bold{
+    font-weight:bold !important;
+}
+
+.prev-article{
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+
+    p{
+        margin:0;
+    }
+
+    margin:20px 0;
+    padding:7.5px 15px;
+    font-size:.9rem;
+    border-right:2px solid #2d2d2d;
+    background:#efefef;
+    color:#2d2d2d;
+}
+
+.justify-content-between{
+    justify-content:space-between;
+}
+
+.help-commands{
+    p{
+        margin-left:15px;
+        font-size:.9rem;
+        margin-top:0;
+
+        &::after{
+            width:1px;
+            height:10px;
+            background:#2d2d2d;
+            content:'';
+            display:inline-block;
+            position:relative;
+            top:2px;
+            margin-right:15px;
+        }
+
+        &:last-child::after{
+            display:none;
+        }
     }
 }
